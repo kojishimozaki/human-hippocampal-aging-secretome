@@ -333,8 +333,8 @@ JA_OVERRIDES: list[tuple[str, str]] = [
 ]
 
 PLACEHOLDER_JA = {
-    "REPO_URL": "［投稿時にリポジトリURLを記入］",
-    "ZENODO_DOI": "［投稿時にZenodo DOIを記入］",
+    "REPO_URL": "https://github.com/kojishimozaki/human-hippocampal-aging-secretome",
+    "ZENODO_DOI": "https://doi.org/10.5281/zenodo.22640703",
     "RELEASE_TAG": "biorxiv-v2",
 }
 

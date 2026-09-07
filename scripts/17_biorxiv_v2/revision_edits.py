@@ -298,8 +298,8 @@ CODE_AVAIL_BODY = (
 # names a git tag instead: create the tag on the finished commit and the reference resolves
 # to exactly one revision with no circularity. Only the two bracketed values need filling.
 PLACEHOLDERS = {
-    "REPO_URL": "[repository URL to be inserted at submission]",
-    "ZENODO_DOI": "[Zenodo DOI to be inserted at submission]",
+    "REPO_URL": "https://github.com/kojishimozaki/human-hippocampal-aging-secretome",
+    "ZENODO_DOI": "https://doi.org/10.5281/zenodo.22640703",
     "RELEASE_TAG": "biorxiv-v2",
 }
 
