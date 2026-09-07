@@ -1,0 +1,23 @@
+{
+  "title": "Analysis code for \"A support-cell secretome program in human hippocampal aging is directionally reproducible but not gene-specific\"",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Shimozaki, Koji",
+      "affiliation": "Brain Science Research Unit, Graduate School of Biomedical Sciences, Nagasaki University, Nagasaki, Japan"
+    }
+  ],
+  "description": "<p>Pre-specified reanalysis of public human hippocampal single-nucleus multiome data through a 2,224-gene secretome lens, with donors as the unit of replication.</p><p>The repository contains the analysis pipeline, the pre-specified analysis documents, the audit trail (<code>audit_log/</code>), pinned conda environments (<code>envs/</code>), and the committed result tables that underlie every number reported in the manuscript. Figure, validation, supplementary-table and multiple-testing-scope targets run from a bare clone using the committed tables alone; targets that recompute chromatin-accessibility concordance, differential-expression robustness, the regulatory layer and the primary differential-expression table additionally require the deposited matrices, which are not redistributed here. Known limits of reproducibility are stated in the manuscript Methods and in <code>results/audit_reruns/calibration/README.md</code>.</p><p>Primary data are public: GSE268609, GSE278576, GSE299139, GSE186538, GSE199243, GSE264692, GSE325391.</p>",
+  "keywords": [
+    "hippocampal aging",
+    "single-nucleus multiome",
+    "secretome",
+    "reanalysis",
+    "matched-null controls",
+    "reproducibility",
+    "pyDESeq2",
+    "scanpy"
+  ],
+  "access_right": "open"
+}

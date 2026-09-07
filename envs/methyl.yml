@@ -1,0 +1,37 @@
+# M1 methylome (snm3C / GSE299139) analysis environment.
+#
+# DESIGN NOTE (honesty / reproducibility): the plan suggested pinning ALLCools. On inspection the
+# region-level mCG quantity we need (sum mc_count / sum cov over CG-context cytosines per region,
+# both strands pooled) is reimplemented transparently in scripts/08_methyl/02_download_and_count.py
+# (pure numpy over the deposited per-(donor x celltype) ALLC), which is MORE auditable than a
+# black-box tool call and needs no fragile extra solve. ALLCools (v1.0.23) is the AUTHORS' reference
+# pipeline (YAP/cemba-data; cited for provenance) — our counts reproduce its `allc-to-region-count`
+# semantics. So the M1 analysis reuses the existing project envs; no new heavy env is required.
+#
+# Environments actually used:
+#   - `bio`   (envs/bio.yml)   : python 3.11.15, numpy 2.4, pandas 2.3, scipy 1.17, scikit-learn 1.8,
+#                                statsmodels 0.14   -> scripts/08_methyl/00,01,02,03 (counting + stats)
+#   - `sgz_r` (envs/sgz_r.yml) : BSgenome.Hsapiens.UCSC.hg38, GenomicRanges, Biostrings
+#                                -> scripts/08_methyl/01b_region_seqfeatures.R (GC + CpG density/O-E)
+#   - CLI (base/system)        : curl, gzip, mawk   -> ALLC fetch + CG-context filter
+#
+# If a standalone env is preferred, this spec reproduces the analysis stack:
+name: methyl
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - numpy>=2.0
+  - pandas>=2.2
+  - scipy>=1.13
+  - scikit-learn>=1.5
+  - statsmodels>=0.14
+  - mawk
+  - curl
+  - gzip
+  # genome sequence features are computed in the `sgz_r` env (BSgenome.Hsapiens.UCSC.hg38);
+  # equivalent in python would be: bioconda::pyfaidx + a local hg38.fa.
+  # ALLCools (authors' reference pipeline; optional, NOT required by our scripts):
+  #   - bioconda::allcools=1.0.23   # pulls htslib/pysam/xarray/zarr; install only if cross-checking
+#
+# Data provenance (see audit_log/2026-06-05_methylome_hardening/RESOLUTION.md):
+#   GSE299139, PMID 39463924, hg38/GRCh38, 503 per-(donor x celltype) ALLC files.

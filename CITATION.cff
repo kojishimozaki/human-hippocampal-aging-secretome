@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: >-
+  Analysis code for "A support-cell secretome program in human hippocampal aging
+  is directionally reproducible but not gene-specific"
+message: >-
+  If you use this code or the result tables, please cite both the software
+  (this record) and the manuscript it accompanies.
+type: software
+authors:
+  - family-names: Shimozaki
+    given-names: Koji
+    affiliation: >-
+      Brain Science Research Unit, Graduate School of Biomedical Sciences,
+      Nagasaki University, Nagasaki 852-8523, Japan
+    email: shimozak@nagasaki-u.ac.jp
+license: MIT
+keywords:
+  - hippocampal aging
+  - single-nucleus multiome
+  - secretome
+  - reanalysis of public data
+  - matched-null controls
+  - reproducibility
+abstract: >-
+  Pre-specified reanalysis of public human hippocampal single-nucleus multiome
+  data (GSE268609, with GSE278576, GSE299139, GSE186538, GSE199243, GSE264692
+  and GSE325391) through a 2,224-gene secretome lens, with donor-level
+  statistics, donor-label permutation calibration of the design itself, and
+  expression- and effect-matched null controls for every reported claim.
+  Includes the pre-specified analysis documents, the result tables underlying
+  every number in the manuscript, and pinned software environments.

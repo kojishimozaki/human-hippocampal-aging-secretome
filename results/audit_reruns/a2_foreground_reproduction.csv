@@ -1,0 +1,11 @@
+celltype,set,n_linked,published_n_linked,obs_mean_oriented,published_obs,n_fdr_concordant,match_n,match_obs_3dp
+Astro,frozen_hit_linked,160,160,0.183378,0.183378,0,True,True
+Astro,all_secretome_linked,5143,5143,0.033152,0.033152,0,True,True
+Micro,frozen_hit_linked,54,54,0.239078,0.239078,0,True,True
+Micro,all_secretome_linked,4160,4160,0.028093,0.028093,0,True,True
+Oligo,frozen_hit_linked,30,30,-0.015097,-0.015097,0,True,True
+Oligo,all_secretome_linked,5015,5015,0.028906,0.028906,0,True,True
+OPC,frozen_hit_linked,19,19,0.286345,0.286345,0,True,True
+OPC,all_secretome_linked,4683,4683,0.026912,0.026912,0,True,True
+Endo,frozen_hit_linked,40,40,0.111795,0.111795,0,True,True
+Endo,all_secretome_linked,2912,2912,0.043386,0.043386,0,True,True

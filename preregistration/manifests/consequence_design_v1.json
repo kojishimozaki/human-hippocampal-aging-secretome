@@ -1,0 +1,85 @@
+{
+  "arm": "CONSEQUENCE_confirmatory",
+  "version": "v1",
+  "claim": "the granule-cell-lineage receptor state capable of receiving the aging niche secretome is associated with cognitive resilience/vulnerability",
+  "primary_name": "frozen receptor-availability / receiver-competence score",
+  "supporting_name": "NicheNet-informed downstream-response analysis",
+  "claim_ceiling": "do NOT claim high receptor expression = strong secretome stimulation; transcriptional response supported only if downstream-target enrichment concords",
+  "dataset": "GSE325391",
+  "cohort_groups": {"CTRL": 6, "RES": 6, "MAD": 5, "SAD": 7},
+  "ligand_origin": {
+    "source_file": "results/validation/frozen_primary_signature.csv",
+    "rule": "direction == UP AND secreted categories",
+    "n_up_hits_gene_x_celltype": 36,
+    "n_unique_up_symbols": 34,
+    "up_unique_symbols": ["ANXA1","ANTXR2","APOC1","APOD","APOE","ASAH1","AZGP1","CCN2","CD74","CHST9","COL12A1","COL21A1","COL4A2","COL8A1","CRB2","CXCL2","CYTL1","DKK2","EFEMP1","EPHA3","FAP","IGFBP5","IL15","KITLG","LGALS9","LIPG","NPC2","OTOS","PAPPA2","SEMA3D","SERPINE1","SPON1","TNC"],
+    "down_ligands_excluded": true
+  },
+  "ligand_to_receptor": {
+    "resource": "refs/nichenet/lr_network_human_21122021.rds",
+    "resource_sha256_head": "47c971d2",
+    "edge_source_column_present": true,
+    "confidence_tier_usable": false,
+    "rule": "use whole 2021-12-21 network as-is; intersect 34 UP symbols with lr_network.from; direct receptors lr_network.to; dedupe receptor to one gene in primary; select edges blind to RES/SAD; forbidden to keep only RES/SAD-different receptors",
+    "n_up_recognized_as_nichenet_ligands": 22,
+    "nichenet_recognized_up_ligands": ["ANXA1","APOC1","APOD","APOE","AZGP1","CCN2","COL12A1","COL21A1","COL4A2","COL8A1","CXCL2","CYTL1","DKK2","EFEMP1","FAP","IL15","KITLG","LGALS9","SEMA3D","SERPINE1","SPON1","TNC"],
+    "n_receptors_pre_filter": 76,
+    "note": "final receptor set frozen at Phase A1 (post-tag) after CTRL expression filter"
+  },
+  "expression_filter": {
+    "diagnosis_blind": true,
+    "population": "CTRL donors only (n=6)",
+    "unit": "donor x neuronal subtype pseudobulk",
+    "detectable": "CPM >= 1",
+    "adopt_rule": ">=3 of 6 CTRL donors detectable in >=1 SGCZ maturation subtype",
+    "sensitivity_only": "label-blind all-group pooled filter (never changes primary set)"
+  },
+  "primary_score": {
+    "unit": "donor x maturation_subtype pseudobulk",
+    "cells_as_units": false,
+    "formula": "per-receptor logCPM -> per-receptor z across RES+SAD donor x subtype samples -> mean over frozen receptors -> one score per donor x subtype",
+    "weighting": "equal weight; no network-degree / NicheNet-weight / RES-SAD-effect weighting in primary"
+  },
+  "maturation": {
+    "primary_levels": 2,
+    "immature": ["DiffN"],
+    "mature": ["MatN_SGCZ_NTF3", "MatN_SGCZ_CHRM3"],
+    "mature_score_rule": "equal-weight mean of donor-level NTF3 score and CHRM3 score (NOT raw-count pool)",
+    "otof_excluded_from_primary": true,
+    "min_cells_per_original_subtype": 20,
+    "min_cell_checked_before_pooling": ["DiffN", "MatN_SGCZ_NTF3", "MatN_SGCZ_CHRM3"],
+    "no_imputation": true,
+    "threshold_never_lowered_post_hoc": true
+  },
+  "primary_model": {
+    "fit_population": "RES + SAD only",
+    "formula": "receiver_score ~ group * maturation_stage + (1 | Run) + (1 | donor)",
+    "estimation": "REML; Kenward-Roger or Satterthwaite df/CI",
+    "primary_estimand": "stage-averaged (equal weight across 2 stages) marginal SAD - RES contrast",
+    "pre_direction": "SAD - RES > 0 (RES < SAD)",
+    "test_sidedness": "two-sided",
+    "key_secondary": ["group:maturation_stage interaction", "stage-specific SAD-RES", "within-group mature-immature"],
+    "n_res": 6, "n_sad": 7,
+    "report": "effect size + CI; cell counts NOT used as df",
+    "covariates_unavailable": ["age", "sex", "pathology"],
+    "run_handling": "(1|Run) random; partial modelling not batch-adjustment; Run nests donor; RES/SAD Run-imbalanced; group-Run confound not fully removable"
+  },
+  "ctrl_mad_context": {"separate_model_and_figure": true, "order": ["CTRL","RES","MAD","SAD"], "not_in_primary_fit": true},
+  "robustness": ["ligand-balanced score","leave-one-receptor-out","leave-one-ligand-family-out","drop ECM/growth-factor families","3-level maturation","raw-count pooled mature","Run-fixed","no-Run","leave-one-Run-out","subtype-stratified score~group+Run","OTOF-added","slingshot pseudotime (exploratory)"],
+  "singular_fit_policy": "report singular fit + Run variance; fallback to donor-random-only; compare with Run-fixed; never pick most significant",
+  "nichenet_supporting": {
+    "resource": "refs/nichenet/ligand_target_matrix_nsga2r_final.rds",
+    "target_rule": "top-50 regulatory-potential targets per frozen UP ligand, restricted to CTRL-granule-detectable",
+    "threshold_sensitivity": [20, 50, 100],
+    "test": "competitive gene-set enrichment of frozen target set on donor-level RES-vs-SAD ranking (stat = SAD - RES model statistic; positive = targets higher in SAD)",
+    "ranking_source": "results/de/de_GSE325391_RESvSAD.csv (stat column, sign-oriented to SAD-RES)",
+    "per_ligand_multiplicity_corrected": true,
+    "exploratory_only": "per-ligand NicheNet ligand-activity (previously non-discriminative)"
+  },
+  "outputs": [
+    "results/resilience/frozen_receiver_receptor_set.csv",
+    "results/resilience/frozen_receiver_set_manifest.json",
+    "results/resilience/pseudobulk_cell_counts.csv",
+    "results/resilience/pseudobulk_inclusion_log.csv"
+  ]
+}

@@ -1,0 +1,19 @@
+cohort,scope,metric,statistic,p,null_p,n,pass,note
+GSE186538_drop79,Astro,(i)directional,52.0,0.7523008113168296,0.6835,25,False,mean_signed=-0.014 wilcox_p=0.683 nUP=18 nDOWN=7
+GSE186538_drop79,Astro,(ii)spearman,0.05235892360120399,0.03561468113823309,0.0365,1188,True,shared secretome genes
+GSE186538_drop79,Astro,(iii)concordance,0.52,0.5978041230558553,0.6005,25,False,bg=0.525 fisherOR=0.98 fisher_p=0.598
+GSE186538_drop79,Micro,(i)directional,10.0,0.5454545454545454,0.783,12,False,mean_signed=-0.043 wilcox_p=0.689 nUP=10 nDOWN=2
+GSE186538_drop79,Micro,(ii)spearman,0.1757278013623433,1.0217930107841696e-07,0.0,863,True,shared secretome genes
+GSE186538_drop79,Micro,(iii)concordance,0.5,0.778446004576288,0.7725,12,False,bg=0.568 fisherOR=0.76 fisher_p=0.778
+GSE186538_drop79,Endo,(i)directional,4.0,0.9575757575757576,0.88,11,False,mean_signed=-0.084 wilcox_p=0.88 nUP=3 nDOWN=8
+GSE186538_drop79,Endo,(ii)spearman,-0.08800757056150041,0.9933290349701595,0.993,790,False,shared secretome genes
+GSE186538_drop79,Endo,(iii)concordance,0.36363636363636365,0.8409382881573513,0.8325,11,False,bg=0.469 fisherOR=0.65 fisher_p=0.84
+GSE186538_drop79,OPC,(i)directional,4.0,0.6000000000000001,0.66,6,False,mean_signed=-0.015 wilcox_p=0.656 nUP=2 nDOWN=4
+GSE186538_drop79,OPC,(ii)spearman,0.07199159233341375,0.01051939116972418,0.0125,1027,True,shared secretome genes
+GSE186538_drop79,OPC,(iii)concordance,0.5,0.684265520812462,0.6825,6,False,bg=0.515 fisherOR=0.94 fisher_p=0.685
+GSE186538_drop79,Oligo,(i)directional,4.0,0.4,0.375,5,False,mean_signed=0.013 wilcox_p=nan nUP=3 nDOWN=2
+GSE186538_drop79,Oligo,(ii)spearman,0.02165266134890405,0.23131495519426612,0.2195,1153,False,shared secretome genes
+GSE186538_drop79,Oligo,(iii)concordance,0.4,0.8036678055658533,0.793,5,False,bg=0.493 fisherOR=0.69 fisher_p=0.804
+GSE186538_drop79,POOLED,(i)directional,334.0,0.8945529388600385,0.931,59,False,mean_signed=-0.031 wilcox_p=0.894 nUP=36 nDOWN=23
+GSE186538_drop79,POOLED,(ii)spearman,0.047534798672487756,0.00037674900430210073,0.0,5021,True,all secretome×niche
+GSE186538_drop79,POOLED,(iii)concordance,0.4745762711864407,0.7687465484063234,0.77,59,False,bg=0.514 fisherOR=0.85 fisher_p=0.768

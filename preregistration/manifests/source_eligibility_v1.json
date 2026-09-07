@@ -1,0 +1,29 @@
+{
+  "arm": "SOURCE_cohort_gated_exploration",
+  "version": "v1",
+  "purpose": "test whether the glial niche secretome SOURCE is attenuated in cognitively-resilient (high-pathology-cognition-preserved) brains; requires a cohort with niche glia + cognition + pathology",
+  "gating": "Phase-0 eligibility exploration only; may run in parallel after the tag; NEVER reshapes CONSEQUENCE or TRAJECTORY",
+  "candidate_cohorts": ["ROSMAP", "SEA-AD", "Mathys", "Green"],
+  "eligibility_criteria_all_required": [
+    "astrocyte, microglia, endothelial, OPC/oligodendrocyte analysable per donor",
+    "pathology burden present (not only cognition/clinical diagnosis)",
+    "high-pathology-cognition-preserved group definable",
+    "donor count and covariates adequate for the analysis",
+    "frozen 60-hit signature projectable WITHOUT modification"
+  ],
+  "decision_rule": {
+    "proceed_to_analysis": "only if ALL eligibility criteria met",
+    "if_eligible": "freeze a separate analysis plan (C3) before any real analysis",
+    "if_cortical": "frame as cross-brain-region glial vulnerability association, NOT an SGZ-niche reproduction; avoid hippocampal-niche extrapolation",
+    "if_none_eligible": "record 'no eligible cohort' as a formal result; no approximate adoption",
+    "no_design_feedback": "findings from SOURCE never change CONSEQUENCE or TRAJECTORY primary design"
+  },
+  "frozen_signature_projection": {
+    "source_file": "results/validation/frozen_primary_signature.csv",
+    "unmodified": true
+  },
+  "outputs": [
+    "results/step0/source_cohort_eligibility_audit.tsv",
+    "results/step0/step0_decisions.md"
+  ]
+}

@@ -1,0 +1,12 @@
+compartment,family,obs_detectable,n_universe,matched_null_mean,matched_null_sd,effect_obs_minus_null,p_low_depleted,p_two,unmatched_null_mean
+Astro,confirmatory,54,76,52.76,0.87,1.24,0.9615,0.3458,53.71
+Micro,confirmatory,60,76,59.24,0.7,0.76,1.0,0.7716,65.66
+Oligo,confirmatory,55,76,55.2,0.52,-0.2,0.7911,1.0,61.13
+OPC,confirmatory,47,76,47.66,1.26,-0.66,0.4383,0.8766,58.23
+Endo,confirmatory,52,76,51.92,0.87,0.08,0.7256,1.0,58.18
+DG_GC,confirmatory,63,76,75.83,0.41,-12.83,0.0005,0.001,75.77
+CA_ExN,confirmatory,45,76,43.9,1.26,1.1,0.9105,0.6717,43.25
+InN,confirmatory,64,76,75.88,0.36,-11.88,0.0005,0.001,75.84
+NSC,neurogenic,22,76,21.99,1.1,0.01,0.6907,1.0,25.84
+Neuroblast,neurogenic,43,76,75.96,0.2,-32.96,0.0005,0.001,75.94
+Immature,neurogenic,45,76,75.85,0.4,-30.85,0.0005,0.001,75.68

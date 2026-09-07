@@ -1,0 +1,11 @@
+celltype,set,n_genes,obs,p_matched,p_signperm
+Astro,frozen_hit,25,0.00024,0.018,0.0425
+Astro,all_secretome,1103,1e-05,0.6377,0.5342
+Micro,frozen_hit,12,0.00022,0.3473,0.2284
+Micro,all_secretome,823,0.00014,0.4928,0.0005
+OPC,frozen_hit,5,-0.00011,0.6227,0.8861
+OPC,all_secretome,846,6e-05,0.008,0.014
+Oligo,frozen_hit,5,-5e-05,0.6632,0.7611
+Oligo,all_secretome,1151,-1e-05,0.9455,0.2249
+Micro2-only,frozen_hit,9,-0.00026,0.8446,0.0555
+Micro2-only,all_secretome,650,3e-05,0.2649,0.2984

@@ -1,0 +1,13 @@
+=== GSE325391 matrix provenance audit (outcome-blind) ===
+adata.X dtype (backed): int64
+adata.layers keys: ['counts']
+adata.raw present: False
+X identical to layers['counts']: True
+
+ layer  min    max  nonint_frac  neg_frac  lib_min  lib_med  lib_max dtype
+     X  1.0 2807.0          0.0       0.0    441.0  10136.5 100961.0 int64
+counts  1.0 2807.0          0.0       0.0    441.0  10136.5 100961.0 int64
+
+VERDICT: PASS (X is raw non-negative integer counts)
+build script (scripts/02_qc/06_build_325391_resilience.py): X <- counts.mtx (raw); layers['counts'] <- X.copy()
+count matrix to use for receptor set + score: X (== counts; raw)

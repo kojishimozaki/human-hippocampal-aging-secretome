@@ -1,0 +1,7 @@
+cohort,display,group,role,scored,pooled_rho,n_shared,hit_concord,n_hit,bg_concord,metrics_passed
+GSE278576,GSE278576,GSE278576 reproduction family,reproduction (3/3 pre-spec.),True,0.2396491409327994,3983,0.8125,48,0.578,3.0
+GSE278576_sexadj,GSE278576 (sex-adj.),GSE278576 reproduction family,sensitivity,True,0.2252358342274132,3983,0.8125,48,0.569,3.0
+GSE278576_age,GSE278576 (cont. age),GSE278576 reproduction family,sensitivity,True,0.1939868333169356,4024,0.7959183673469388,49,0.542,3.0
+GSE186538,GSE186538,GSE186538 leverage-sensitive,supportive (leverage-limited),True,0.2490871835608532,5066,0.7627118644067796,59,0.591,3.0
+GSE186538_drop79,GSE186538 (drop 79 y),GSE186538 leverage-sensitive,leverage sensitivity,True,0.0475347986724877,5021,0.4745762711864407,59,0.514,1.0
+GSE199243v2,GSE199243 (glia),GSE199243 boundary comparison,boundary — not scored,False,0.022896181906067375,3848,0.6071428571428571,56,0.5097573839662447,

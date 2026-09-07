@@ -1,0 +1,11 @@
+{
+  "step": "00_freeze_universe",
+  "prereg_tag": "prereg/receiver-map-v1",
+  "manifest": "results/resilience/frozen_receiver_set_manifest.json",
+  "manifest_freeze_commit": "d74bdfd4a98e5b76e0b8ca82fc2057b3bde45a13",
+  "n_ligands": 22,
+  "n_receptors_universe": 76,
+  "rds": "refs/nichenet/lr_network_human_21122021.rds",
+  "rds_sha256": "47c971d2fbba4ecd0ba7485d1846a74054432a0d1a97ea3e6a79ae27d0da8094",
+  "rds_sha_pin_ok": true
+}

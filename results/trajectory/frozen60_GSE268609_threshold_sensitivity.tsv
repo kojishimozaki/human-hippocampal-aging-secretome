@@ -1,0 +1,10 @@
+relative	absolute	is_main	amplified	maintained	AD_attenuated	AD_divergent	not_recapitulated	weak_indeterminate
+0.33	0.2	False	2	50	5	2	0	1
+0.33	0.25	False	1	50	5	0	0	4
+0.33	0.3	False	0	51	4	0	0	5
+0.5	0.2	False	2	54	1	2	0	1
+0.5	0.25	True	1	54	1	0	0	4
+0.5	0.3	False	0	54	1	0	0	5
+0.67	0.2	False	1	55	1	2	0	1
+0.67	0.25	False	1	54	1	0	0	4
+0.67	0.3	False	0	54	1	0	0	5

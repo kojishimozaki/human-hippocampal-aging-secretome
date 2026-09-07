@@ -1,0 +1,4 @@
+model,n_donor,n_YA,n_HA,n_nuclei,donors_dropped,evaluable,design,n_genes,n_hits_evaluated,n_hits_padj01,sign_retained,lfc_corr_secretome
+full_bucket,16,7,9,873,47,True,~grp,15128,11,11,11,1.0
+endo_only,14,7,7,598,32;37;47,True,~grp,14774,11,6,11,0.616
+nonEndo_adjusted,16,7,9,873,47,True,~nonEndo_frac + grp,15128,11,11,11,0.9155

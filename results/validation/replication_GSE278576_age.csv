@@ -1,0 +1,17 @@
+cohort,scope,metric,statistic,p,null_p,n,pass,note
+GSE278576_age,Astro,(i)directional,126.0,0.000840441023507385,0.0,26,True,mean_signed=0.012 wilcox_p=0.000295 nUP=18 nDOWN=8
+GSE278576_age,Astro,(ii)spearman,0.22984844518325293,7.566981044588378e-15,0.0,1091,True,shared secretome genes
+GSE278576_age,Astro,(iii)concordance,0.7692307692307693,0.013008954834464792,0.01,26,True,bg=0.537 fisherOR=2.87 fisher_p=0.0141
+GSE278576_age,Micro,(i)directional,20.0,0.015151515151515152,0.0005,12,True,mean_signed=0.020 wilcox_p=0.00122 nUP=10 nDOWN=2
+GSE278576_age,Micro,(ii)spearman,0.26465127050908527,3.7181437792356536e-14,0.0,773,True,shared secretome genes
+GSE278576_age,Micro,(iii)concordance,0.8333333333333334,0.05522489309762701,0.052,12,False,bg=0.569 fisherOR=3.79 fisher_p=0.057
+GSE278576_age,Endo,ALL,,,,0,False,NOT_EVALUABLE (celltype absent in external DE)
+GSE278576_age,OPC,(i)directional,8.0,0.06666666666666667,0.049,6,False,mean_signed=0.018 wilcox_p=0.0469 nUP=2 nDOWN=4
+GSE278576_age,OPC,(ii)spearman,0.13543631958184335,1.2265490674753973e-05,0.0,964,True,shared secretome genes
+GSE278576_age,OPC,(iii)concordance,0.8333333333333334,0.1335372338041016,0.1225,6,False,bg=0.524 fisherOR=4.54 fisher_p=0.135
+GSE278576_age,Oligo,(i)directional,5.0,0.2,0.087,5,False,mean_signed=0.005 wilcox_p=nan nUP=3 nDOWN=2
+GSE278576_age,Oligo,(ii)spearman,0.172005621728437,1.0689684281125247e-09,0.0,1196,True,shared secretome genes
+GSE278576_age,Oligo,(iii)concordance,0.8,0.2462075869225314,0.252,5,False,bg=0.543 fisherOR=3.36 fisher_p=0.247
+GSE278576_age,POOLED,(i)directional,473.0,4.389793466228571e-06,0.0,49,True,mean_signed=0.014 wilcox_p=7.14e-08 nUP=33 nDOWN=16
+GSE278576_age,POOLED,(ii)spearman,0.19398683331693561,1.0192448351478448e-35,0.0,4024,True,all secretome×niche
+GSE278576_age,POOLED,(iii)concordance,0.7959183673469388,0.0001954803489957754,0.0,49,True,bg=0.542 fisherOR=3.30 fisher_p=0.000212

@@ -1,0 +1,12 @@
+compartment,family,n_genes_in_table,global_detectable_frac,n_in_table,coverage_in_table_of_76,n_absent_from_table,n_detectable_in_table,in_table_detectable_frac,pool_detectable_frac,layerC,obs_detect_intab,matched_null_mean,effect_obs_minus_null,p_low_depleted
+Astro,confirmatory,23366,0.7084,64,0.8421,12,54,0.8438,0.7081,interpretable,54,52.76,1.24,0.9665
+Micro,confirmatory,17628,0.8633,63,0.8289,13,60,0.9524,0.863,interpretable,60,59.22,0.78,1.0
+Oligo,confirmatory,22844,0.8054,62,0.8158,14,55,0.8871,0.8052,interpretable,55,55.19,-0.19,0.7956
+OPC,confirmatory,20577,0.7664,61,0.8026,15,47,0.7705,0.7664,interpretable,47,47.67,-0.67,0.4293
+Endo,confirmatory,15128,0.7657,58,0.7632,18,52,0.8966,0.7652,interpretable,52,51.91,0.09,0.7361
+DG_GC,confirmatory,24833,0.997,63,0.8289,13,63,1.0,0.997,not_interpretable_saturated,63,,,
+CA_ExN,confirmatory,25895,0.5702,67,0.8816,9,45,0.6716,0.57,interpretable,45,43.89,1.11,0.9115
+InN,confirmatory,23179,0.998,64,0.8421,12,64,1.0,0.998,not_interpretable_saturated,64,,,
+NSC,neurogenic,10607,0.3406,40,0.5263,36,22,0.55,0.3398,interpretable,22,21.99,0.01,0.6792
+Neuroblast,neurogenic,13728,0.9992,43,0.5658,33,43,1.0,0.9992,not_interpretable_saturated,43,,,
+Immature,neurogenic,16346,0.9957,48,0.6316,28,45,0.9375,0.9959,not_interpretable_saturated,45,,,

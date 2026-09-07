@@ -1,0 +1,12 @@
+compartment,family,n_detectable_receptors,call,obs_mean_signed_lfc,null_mean_signed_lfc,effect_signed,p_up_oneside,p_two_signed,obs_mean_abs_lfc,null_mean_abs_lfc,p_dynamism_two,bh_q_confirmatory,bh_q_all_ref
+Astro,confirmatory,54,FAIL,0.031,0.0293,0.0016,0.4878,0.9755,0.3295,0.2636,0.098,0.9855,0.8943
+Micro,confirmatory,60,FAIL,-0.1847,-0.0226,-0.1622,0.9765,0.048,0.6012,0.4045,0.002,0.9855,0.9855
+Oligo,confirmatory,55,FAIL,0.1033,0.044,0.0593,0.1334,0.2669,0.3801,0.2741,0.014,0.9855,0.7337
+OPC,confirmatory,47,FAIL,-0.0059,0.0267,-0.0325,0.7266,0.5477,0.3395,0.2453,0.022,0.9855,0.9855
+Endo,confirmatory,52,FAIL,-0.0342,0.0172,-0.0514,0.7676,0.4658,0.6229,0.3419,0.001,0.9855,0.9855
+DG_GC,confirmatory,63,FAIL,-0.1467,-0.02,-0.1267,0.9855,0.03,0.3252,0.3005,0.5097,0.9855,0.9855
+CA_ExN,confirmatory,45,FAIL,-0.1382,-0.0119,-0.1263,0.9855,0.03,0.3956,0.2527,0.004,0.9855,0.9855
+InN,confirmatory,64,FAIL,0.0049,-0.0186,0.0235,0.3103,0.6207,0.246,0.2575,0.7656,0.9855,0.8943
+NSC,neurogenic,22,EXPLORATORY,0.2903,0.0354,0.2549,0.057,0.1139,0.6132,0.5676,0.6347,,0.627
+Neuroblast,neurogenic,43,EXPLORATORY,0.0895,0.0819,0.0076,0.4563,0.9125,0.508,0.4239,0.1469,,0.8943
+Immature,neurogenic,45,EXPLORATORY,0.03,0.0036,0.0263,0.3868,0.7736,0.6221,0.4431,0.007,,0.8943

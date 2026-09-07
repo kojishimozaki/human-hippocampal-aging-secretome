@@ -1,0 +1,6 @@
+celltype,n_donor,wh,dg,n_hits,n_eval,estimable,lfc_corr,sign_retained,padj01_retained
+Astro,17,6,11,26,26,True,0.959,26,17
+Micro,16,6,10,12,12,True,0.973,12,10
+Oligo,17,6,11,5,5,True,0.963,5,5
+OPC,17,6,11,6,6,True,0.972,6,4
+Endo,16,6,10,11,11,True,0.955,11,6

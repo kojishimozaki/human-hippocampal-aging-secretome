@@ -1,0 +1,6 @@
+celltype,n_donor,n_sig_secr,lfc_corr,sig_sign_retained,sig_still_padj01
+Astro,17,26,0.896,26,16
+Micro,16,12,0.918,12,2
+Oligo,17,5,0.891,5,3
+OPC,17,6,0.9,6,4
+Endo,16,11,0.912,11,5

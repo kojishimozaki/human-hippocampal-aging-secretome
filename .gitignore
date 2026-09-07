@@ -1,0 +1,18 @@
+# Data that is not redistributed. The primary data are public (see README, Data sources);
+# these trees are regenerable and far too large to deposit.
+/raw/
+/processed/
+
+# Products of the reproducible targets. `make figures` writes here; the figures as
+# submitted are committed under submission/v2/figures/.
+/figures/
+
+# Local environment and caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+/config.local.sh
+.DS_Store
+
+# Marker written by the build script in the working repository
+/.built-by-build_public_release

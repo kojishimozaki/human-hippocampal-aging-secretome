@@ -1,0 +1,27 @@
+[harmonize] ADvHA Ensembl->symbol via GENCODE v44 (input 100% ENSG): unmapped ENSG rows dropped=439, (symbol,celltype) collisions collapsed by max baseMean=52
+[sign] verified: +log2FC == aging-UP in 268609 HAvYA and 278576 (old>young).
+PROJ=/home/neurofuture/Bioanalysis/01.SGZ_aging_project  seed=42  n_perm=10000
+[foreground] frozen on HAvYA chromVAR nominal p<0.05: 31 (gene,celltype) units
+[HAvYA] foreground testable in RNA: 22/31
+[ADvHA_projection|SENS_absdz_matched] unmatched foreground dropped (stratum absent in bg): 3
+[ADvHA_projection|SENS_family_matched] with-replacement strata (bg<fg): [(('Astro', '1.0', 'ETS'), 1, 7), (('Micro', '1.0', 'TP53fam'), 1, 2)]
+
+================= STOP REPORT SUMMARY =================
+
+[HAvYA primary]  matched-permutation (ct×sign×expr):
+  foreground concordant 11/22 = 0.500 (95%CI 0.31–0.69) | matched bg 0.524 | RD -0.024 | MH-OR 0.90 | perm p(greater)=0.6802 | unmatched_fg=0
+  [sens] pooled Fisher OR=0.94 p=0.6397
+
+[ADvHA projection]  matched-permutation (ct×sign×expr):
+  foreground concordant 14/23 = 0.609 (95%CI 0.41–0.78) | matched bg 0.539 | RD +0.070 | MH-OR 1.49 | perm p(greater)=0.3161 | unmatched_fg=0
+  [sens] pooled Fisher OR=1.35 p=0.3161
+
+[category counts HAvYA foreground]
+category
+C_discordant            11
+B_concordant_q>=0.05    11
+D_not_testable           9
+
+[GSE278576 RNA-direction robustness] testable=14 (Endo mismatch=8, low-expr=9); direction-agree 3/14 (95%CI 0.05–0.51); Spearman ρ=-0.02 p=0.958
+
+[outputs] 11 files at /home/neurofuture/Bioanalysis/01.SGZ_aging_project/results/regulatory/

@@ -1,0 +1,12 @@
+celltype,design,pmi_design,n_donor,exploratory,n_sig_secr,lfc_corr,sign_retained,padj01_retained
+DG_GC,~arm + grp,~pmi + arm + grp,16,False,4,0.892,4,1
+CA_ExN,~arm + grp,~pmi + arm + grp,17,False,3,0.86,3,3
+InN,~arm + grp,~pmi + arm + grp,17,False,0,0.813,0,0
+Astro,~arm + grp,~pmi + arm + grp,17,False,17,0.897,17,7
+Micro,~arm + grp,~pmi + arm + grp,16,False,11,0.913,11,1
+Oligo,~arm + grp,~pmi + arm + grp,17,False,7,0.892,7,2
+OPC,~arm + grp,~pmi + arm + grp,17,False,6,0.903,6,1
+Endo,~arm + grp,~pmi + arm + grp,16,False,6,0.906,6,2
+NSC,~arm + grp,~pmi + arm + grp,12,True,17,0.401,17,0
+Neuroblast,~arm + grp,~pmi + arm + grp,13,True,0,0.862,0,0
+Immature,~arm + grp,~pmi + arm + grp,12,True,0,0.759,0,0

@@ -1,0 +1,4 @@
+pair,oid_a,oid_b,testable,n_agree,n_markers,disagreeing,sex_agree,sex_markers,sex_disagreeing,refuted_as_same_individual,calibration_full_agreement_rate
+A,5,23,True,7,7,,4,4,,False,1.0
+B,6,29,True,7,7,,4,4,,False,1.0
+C,14,25,True,7,7,,4,4,,False,1.0

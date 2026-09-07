@@ -1,0 +1,19 @@
+cohort,scope,metric,statistic,p,null_p,n,pass,note
+GSE186538,Astro,(i)directional,93.0,0.03685250676097358,0.0335,25,True,mean_signed=0.012 wilcox_p=0.0401 nUP=18 nDOWN=7
+GSE186538,Astro,(ii)spearman,0.23188497039429254,1.733633441221419e-16,0.0,1206,True,shared secretome genes
+GSE186538,Astro,(iii)concordance,0.68,0.20297618383116833,0.2055,25,False,bg=0.577 fisherOR=1.55 fisher_p=0.207
+GSE186538,Micro,(i)directional,18.0,0.06060606060606061,0.0555,12,False,mean_signed=0.016 wilcox_p=0.0212 nUP=10 nDOWN=2
+GSE186538,Micro,(ii)spearman,0.3109957620326673,2.019115271292045e-21,0.0,877,True,shared secretome genes
+GSE186538,Micro,(iii)concordance,0.8333333333333334,0.09240970139338574,0.085,12,False,bg=0.608 fisherOR=3.22 fisher_p=0.0945
+GSE186538,Endo,(i)directional,24.0,0.006060606060606061,0.0005,11,True,mean_signed=0.033 wilcox_p=0.000488 nUP=3 nDOWN=8
+GSE186538,Endo,(ii)spearman,0.16814728076961014,9.323404856922959e-07,0.0,795,True,shared secretome genes
+GSE186538,Endo,(iii)concordance,1.0,0.0016136863194546804,0.0015,11,True,bg=0.557 fisherOR=inf fisher_p=0.00172
+GSE186538,OPC,(i)directional,7.0,0.13333333333333333,0.065,6,False,mean_signed=0.026 wilcox_p=0.0781 nUP=2 nDOWN=4
+GSE186538,OPC,(ii)spearman,0.27512833056187513,1.108132070981655e-19,0.0,1032,True,shared secretome genes
+GSE186538,OPC,(iii)concordance,0.8333333333333334,0.2573526395612605,0.2605,6,False,bg=0.615 fisherOR=3.13 fisher_p=0.259
+GSE186538,Oligo,(i)directional,3.0,0.6000000000000001,0.4505,5,False,mean_signed=0.001 wilcox_p=nan nUP=3 nDOWN=2
+GSE186538,Oligo,(ii)spearman,0.2565069237360361,3.984383586257925e-19,0.0,1156,True,shared secretome genes
+GSE186538,Oligo,(iii)concordance,0.4,0.9063976999863929,0.907,5,False,bg=0.592 fisherOR=0.46 fisher_p=0.906
+GSE186538,POOLED,(i)directional,664.0,5.273172057502553e-05,0.0,59,True,mean_signed=0.017 wilcox_p=5.39e-05 nUP=36 nDOWN=23
+GSE186538,POOLED,(ii)spearman,0.24908718356085324,8.251050936616441e-73,0.0,5066,True,all secretome×niche
+GSE186538,POOLED,(iii)concordance,0.7627118644067796,0.004299921376235014,0.0095,59,True,bg=0.591 fisherOR=2.23 fisher_p=0.00451

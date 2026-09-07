@@ -1,0 +1,2 @@
+chrom,n_peaks,spearman_rho,null_mean,null_p95,n_shuffles,gate_pass,fragment_total,matrix_total,note
+chr1,31745,0.985059,0.00137,0.010362,100,True,194867607,66646710,"fragments cover all 366,175 barcodes; matrix keeps 153,530 QC-passing cells, so magnitudes are not expected to match. This tests ORDER."

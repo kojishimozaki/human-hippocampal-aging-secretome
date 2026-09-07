@@ -1,0 +1,56 @@
+{
+  "git_commit": "4b1d830c9b9c5a9d4135704fd734d5733f11bf33",
+  "prereg_tag": "tf-rna-concordance-prereg",
+  "prereg_commit": "26ea769bf2f9bdcff0e1abeeca48301e1070ac65",
+  "run_datetime": "2026-06-19T21:14:14",
+  "python": "3.11.15",
+  "pandas": "2.3.3",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "seed": 42,
+  "n_perm": 10000,
+  "seed_note": "seed governs ONLY stratified-permutation sampling; all joins/tests deterministic",
+  "inputs": {
+    "chromvar": {
+      "path": "/home/neurofuture/Bioanalysis/01.SGZ_aging_project/results/de/chromvar_motifs_strengthened.csv",
+      "sha256": "8cbe09cbe1ab09c554d297a4a06a4dd3730c78bae2c3fc4b4a9bd6dcdce52609"
+    },
+    "rna_HAvYA": {
+      "path": "/home/neurofuture/Bioanalysis/01.SGZ_aging_project/results/de/de_GSE268609_per_celltype.csv",
+      "sha256": "950173e43fa2d376e1fad163716fbc4ca497fa7bde6f27c04c883eaedad67c2b"
+    },
+    "rna_ADvHA": {
+      "path": "/home/neurofuture/Bioanalysis/01.SGZ_aging_project/results/de/de_GSE268609_ADvHA.csv",
+      "sha256": "620432338f783c9a41a24c33ecc012d9df0559effa3d31b364c5d9ac3ef760d0"
+    },
+    "rna_278576": {
+      "path": "/home/neurofuture/Bioanalysis/01.SGZ_aging_project/results/de/de_GSE278576_sexadj_per_celltype.csv",
+      "sha256": "206e4da63bfc149a7a2e0a2bcdebf3eda091f4dae4b7d5e7cfe04f5767b5c195"
+    }
+  },
+  "foreground_units": 31,
+  "foreground_testable_HAvYA": 22,
+  "mapping_version": "direct-name v1 (split '::', strip '(var.N)')",
+  "celltype_map_278576": {
+    "Astro": "Astro",
+    "Micro": "Micro",
+    "OPC": "OPC",
+    "Oligo": "Oligo"
+  },
+  "celltype_map_note": "Endo -> NOT_TESTABLE_CELLTYPE_MISMATCH",
+  "expr_bins": "log1p(baseMean) tertile within celltype",
+  "bh_families": "per-contrast RNA q from input DE universe (NOT recomputed on 22); enrichment families separated: HAvYA primary, ADvHA projection, family-sensitivity, 278576 robustness; never pooled",
+  "outputs": [
+    "motif_tf_rna_concordance_ADvHA_family_sensitivity.csv",
+    "motif_tf_rna_concordance_ADvHA_projection_enrichment.csv",
+    "motif_tf_rna_concordance_ADvHA_projection_pairs.csv",
+    "motif_tf_rna_concordance_GSE278576_RNA_robustness.csv",
+    "motif_tf_rna_concordance_HAvYA_family_sensitivity.csv",
+    "motif_tf_rna_concordance_HAvYA_primary_enrichment.csv",
+    "motif_tf_rna_concordance_HAvYA_primary_pairs.csv",
+    "motif_tf_rna_concordance_crosscontrast_descriptive.csv",
+    "motif_tf_rna_concordance_frozen_foreground.csv",
+    "motif_tf_rna_concordance_mapping_audit.csv",
+    "motif_tf_rna_concordance_run_manifest.json"
+  ]
+}

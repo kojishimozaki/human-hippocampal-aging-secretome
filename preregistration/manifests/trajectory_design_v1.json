@@ -1,0 +1,75 @@
+{
+  "arm": "GSE268609_aging_to_AD_trajectory",
+  "version": "v1",
+  "framing": "cross-sectional state axis across young aging, healthy aging, AD; no progression/conversion/evolution language",
+  "dataset": "GSE268609",
+  "groups": {"YA": 8, "HA": 9, "AD": 10, "MCI_secondary": 6, "SA_excluded": 6},
+  "model": {
+    "unit": "donor x cell-type pseudobulk",
+    "cells_as_units": false,
+    "per_celltype_separate_fits": true,
+    "celltypes": ["Astro", "Micro", "Endo", "OPC", "Oligo"],
+    "formula": "~ arm + grp",
+    "grp_levels": ["YA", "HA", "AD"],
+    "grp_reference": "YA",
+    "contrasts_extracted": ["HA - YA", "AD - HA", "AD - YA"],
+    "arm_covariate_reason": "whole-hippo (orig.ident 1-14) vs DG-microdissect (15-39) imbalanced across groups",
+    "arm_confound_not_fully_removable": true,
+    "preflight_checks": ["arm x grp crosstab", "full-rank design", "no group confined to one arm", "per-celltype donor counts", "extreme library-size", "donor exclusions + reasons"],
+    "effect_for_classification": "shrunken log2FC",
+    "save_raw_and_shrunken": true,
+    "padj_role": "evidence strength only, NOT used to classify"
+  },
+  "directional_definitions": {
+    "s": "sign(frozen aging log2FC); UP=+1 DOWN=-1",
+    "A": "s * LFC(HA - YA)  [aging recapitulation]",
+    "D": "s * LFC(AD - HA)  [further AD movement]",
+    "T": "s * LFC(AD - YA) = A + D  [total]"
+  },
+  "aging_projection_gate": {
+    "uses_padj": false,
+    "eligible": "A >= 0.25 log2FC",
+    "A_lt_0": "aging direction not recapitulated",
+    "A_0_to_0.25": "weak / indeterminate aging projection",
+    "not_forced_into_four_categories": true
+  },
+  "per_hit_threshold": "delta_i = max(0.25, 0.5 * A)",
+  "categories": {
+    "Amplified": "D >= delta_i",
+    "Maintained": "-delta_i < D < delta_i",
+    "AD_attenuated": "D <= -delta_i AND T > 0",
+    "AD_divergent": "T <= 0 (usually D <= -delta_i)"
+  },
+  "category_notes": {
+    "AD_attenuated": "redefinition of ambiguous original 'age-associated only'; 'age-associated only' is prose-only, never a class name",
+    "Maintained": "HA change persists in AD; not 'no change'"
+  },
+  "subflags_AD_divergent": {
+    "reverted_toward_YA": "|T| < 0.25",
+    "direction_reversed": "T <= -0.25"
+  },
+  "threshold_sensitivity": {
+    "relative": [0.33, 0.50, 0.67],
+    "absolute": [0.20, 0.25, 0.30],
+    "n_combos": 9,
+    "main_result_fixed_at": {"relative": 0.50, "absolute": 0.25},
+    "never_pick_cleanest": true
+  },
+  "evidence_and_stability": ["leave-one-donor-out category stability", "bootstrap category proportions", "raw-vs-shrunken agreement", "arm-adjusted vs not", "margin distance D - delta_i"],
+  "modules": {
+    "per_celltype": true,
+    "up_and_down_separate_in_primary": true,
+    "no_cross_direction_averaging": true,
+    "no_mixing_all_five_celltypes": true,
+    "secondary_signed_score": "mean(z UP) - mean(z DOWN), optional",
+    "module_model": "module_score ~ arm + grp per celltype; EMMs + CI; display YA->HA->MCI->AD; primary inference YA/HA/AD only"
+  },
+  "mci": {"primary_use": false, "secondary_only_after_freeze": true, "no_transition_or_progression_claim": true},
+  "outputs": [
+    "results/trajectory/frozen60_GSE268609_hit_trajectory.tsv",
+    "results/trajectory/frozen60_GSE268609_module_scores.tsv",
+    "results/trajectory/frozen60_GSE268609_threshold_sensitivity.tsv",
+    "results/trajectory/frozen60_GSE268609_classification_manifest.json"
+  ],
+  "anti_rename_guarantee": "the A>=0.25 projection gate applied before classification makes this a genuine freeze->test projection, not a renamed 3-group DE"
+}

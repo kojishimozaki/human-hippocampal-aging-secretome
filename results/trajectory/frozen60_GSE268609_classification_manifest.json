@@ -1,0 +1,25 @@
+{
+  "amendments": [
+    "v1",
+    "v1.1",
+    "v1.2(superseded)",
+    "v1.3",
+    "v1.4"
+  ],
+  "classification_effect": "ashr posterior-mean LFC; T_class=A+D; raw-LFC category = supporting sensitivity",
+  "primary_thresholds": {
+    "relative": 0.5,
+    "absolute": 0.25
+  },
+  "category_counts_primary": {
+    "maintained": 54,
+    "weak_indeterminate_aging_projection": 4,
+    "AD_attenuated": 1,
+    "amplified": 1
+  },
+  "raw_vs_ashr_category_concordance": 0.8333333333333334,
+  "T_discrepancy_abs_median": 0.3206845107546879,
+  "T_discrepancy_abs_max": 1.9671126746826233,
+  "n_hits": 60,
+  "n_eligible": 56
+}

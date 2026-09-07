@@ -1,0 +1,17 @@
+# N2 pathway-library cache  (download date: 2026-06-18)
+# gseapy 1.2.1; source Enrichr (maayanlab.cloud). Versions are encoded in the library names.
+MSigDB_Hallmark_2020: 50 sets -> refs/enrichr/MSigDB_Hallmark_2020.gmt
+Reactome_2022: 1816 sets -> refs/enrichr/Reactome_2022.gmt
+GO_Biological_Process_2023: 5406 sets -> refs/enrichr/GO_Biological_Process_2023.gmt
+
+# targeted niche-response sets -> refs/neuron_response_sets.gmt
+  NFkB_TNFA: 200 genes
+  IFN_gamma: 200 genes
+  IFN_alpha: 97 genes
+  Inflammatory: 200 genes
+  Complement: 200 genes
+  UPR: 113 genes
+  SenMayo: 124 genes
+  ISR_ATF4: 13 genes
+  Senescence_core: 10 genes
+  Cyt_Compl_Receptors: 23 genes

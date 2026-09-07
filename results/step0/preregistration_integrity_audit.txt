@@ -1,0 +1,26 @@
+=== Pre-registration freeze-integrity audit ===
+of-record design = tag prereg/secretome-resilience-trajectory-v1 -> commit 5b29c74
+clerical commit under test = d74bdfd
+
+--- git diff --stat 5b29c74..d74bdfd ---
+ preregistration/secretome_resilience_trajectory_v1.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- git diff 5b29c74..d74bdfd ---
+diff --git a/preregistration/secretome_resilience_trajectory_v1.md b/preregistration/secretome_resilience_trajectory_v1.md
+index acdd323..0fea92f 100644
+--- a/preregistration/secretome_resilience_trajectory_v1.md
++++ b/preregistration/secretome_resilience_trajectory_v1.md
+@@ -10,7 +10,7 @@ Design locked via `/grill-me` (PI-confirmed, branches Q1–Q4 + execution proced
+ branches, carrying all frozen inputs required for the resilience and trajectory arms (frozen 60-hit
+ signature, GSE325391/GSE268609 processed data, NicheNet priors, GSE325391 RES/SAD DE).
+ **Branch:** `analysis/secretome-resilience-trajectory`.
+-**Registration commit / tag:** _filled at P2_ — tag `prereg/secretome-resilience-trajectory-v1`.
++**Registration commit / tag:** `5b29c74b91ba68886a239b066da10919899dfbf7` (registration of record; 2026-06-20) — tag `prereg/secretome-resilience-trajectory-v1`.
+ **Pre-stash of prior WIP:** `git stash a902e75f…` ("WIP before secretome-resilience branch: TF-RNA prose +
+ neuron work"); not applied on this branch.
+ 
+
+--- VERDICT ---
+PASS: only the pre-registration body changed (1+/1-); change = registration-hash line only.
+No hypothesis/threshold/model/gene-set/hierarchy change. Amendment NOT required.
