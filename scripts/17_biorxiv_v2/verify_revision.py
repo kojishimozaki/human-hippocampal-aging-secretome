@@ -285,18 +285,22 @@ def main() -> int:
     print("\nI2. Release metadata describes what is actually here")
     # .zenodo.json once advertised an audit trail the curated release does not carry.
     # Any repository path either file names must exist in the checkout that ships it.
-    for meta in ("README.md", ".zenodo.json", "CITATION.cff"):
+    # The metadata files describe the deposit, so every path they name must be in it.
+    for meta in (".zenodo.json", "CITATION.cff"):
         f = PROJ / meta
         if not f.exists():
             continue
-        text = f.read_text(encoding="utf-8")
         named = set(re.findall(r"(?<![\w/])((?:results|scripts|refs|manuscript|preregistration|"
-                               r"docs|envs|audit_log|submission|figures|processed|raw)"
-                               r"/[\w./-]*)", text))
-        missing = sorted(n for n in named
-                         if not (PROJ / n.rstrip("/.")).exists()
-                         and not n.startswith(("processed/", "raw/")))
+                               r"docs|envs|audit_log|submission|figures)/[\w./-]*)",
+                               f.read_text(encoding="utf-8")))
+        missing = sorted(n for n in named if not (PROJ / n.rstrip("/.")).exists())
         check(f"{meta} names only paths that exist here", not missing, ", ".join(missing[:5]))
+    # The README also describes what is deliberately absent, so prose mentions are fine;
+    # a link that does not resolve is not.
+    readme = (PROJ / "README.md").read_text(encoding="utf-8")
+    broken = [t for t in re.findall(r"\]\(([a-zA-Z][^)#:]*)\)", readme)
+              if not (PROJ / t).exists()]
+    check("README.md links all resolve", not broken, ", ".join(broken[:5]))
 
     print("\nJ. Placeholders")
     ph = re.findall(r"\[(?:repository URL|Zenodo DOI)[^\]]*\]", en)
