@@ -8,7 +8,7 @@
       "affiliation": "Brain Science Research Unit, Graduate School of Biomedical Sciences, Nagasaki University, Nagasaki, Japan"
     }
   ],
-  "description": "<p>Pre-specified reanalysis of public human hippocampal single-nucleus multiome data through a 2,224-gene secretome lens, with donors as the unit of replication.</p><p>The repository contains the analysis pipeline, the pre-specified analysis documents, the audit trail (<code>audit_log/</code>), pinned conda environments (<code>envs/</code>), and the committed result tables that underlie every number reported in the manuscript. Figure, validation, supplementary-table and multiple-testing-scope targets run from a bare clone using the committed tables alone; targets that recompute chromatin-accessibility concordance, differential-expression robustness, the regulatory layer and the primary differential-expression table additionally require the deposited matrices, which are not redistributed here. Known limits of reproducibility are stated in the manuscript Methods and in <code>results/audit_reruns/calibration/README.md</code>.</p><p>Primary data are public: GSE268609, GSE278576, GSE299139, GSE186538, GSE199243, GSE264692, GSE325391.</p>",
+  "description": "<p>Pre-specified reanalysis of public human hippocampal single-nucleus multiome data through a 2,224-gene secretome lens, with donors as the unit of replication. The design is calibrated by donor-label permutation, and every claim is paired with a control built to break it.</p><p>The deposit contains the analysis pipeline, the pre-specified analysis documents (<code>preregistration/</code>), pinned conda environments (<code>envs/</code>), and the committed result tables that underlie every number reported in the manuscript. Six targets run from a bare clone using the committed tables alone: <code>figures</code>, <code>validation</code>, <code>supplementary-tables</code>, <code>bh-scope</code>, <code>strict-secretome</code> and <code>verify-manuscript</code> — the last re-derives the manuscript's numbers from the source tables rather than taking the manuscript's word for them. Targets that recompute chromatin-accessibility concordance, differential-expression robustness, the regulatory layer and the primary differential-expression table additionally require the deposited matrices, which are not redistributed here. The limits of that reproducibility are stated in the manuscript Methods and in <code>results/audit_reruns/calibration/README.md</code>.</p><p>The typeset manuscript and its figures are on the preprint server; this deposit holds the text of record and the tables every number in it comes from.</p><p>Primary data are public: GSE268609, GSE278576, GSE299139, GSE186538, GSE199243, GSE264692, GSE325391.</p>",
   "keywords": [
     "hippocampal aging",
     "single-nucleus multiome",
@@ -19,5 +19,13 @@
     "pyDESeq2",
     "scanpy"
   ],
-  "access_right": "open"
+  "access_right": "open",
+  "version": "biorxiv-v2",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/kojishimozaki/human-hippocampal-aging-secretome",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
 }

@@ -282,6 +282,22 @@ def main() -> int:
     else:
         check("check_numbers.py passes", r.returncode == 0, last)
 
+    print("\nI2. Release metadata describes what is actually here")
+    # .zenodo.json once advertised an audit trail the curated release does not carry.
+    # Any repository path either file names must exist in the checkout that ships it.
+    for meta in ("README.md", ".zenodo.json", "CITATION.cff"):
+        f = PROJ / meta
+        if not f.exists():
+            continue
+        text = f.read_text(encoding="utf-8")
+        named = set(re.findall(r"(?<![\w/])((?:results|scripts|refs|manuscript|preregistration|"
+                               r"docs|envs|audit_log|submission|figures|processed|raw)"
+                               r"/[\w./-]*)", text))
+        missing = sorted(n for n in named
+                         if not (PROJ / n.rstrip("/.")).exists()
+                         and not n.startswith(("processed/", "raw/")))
+        check(f"{meta} names only paths that exist here", not missing, ", ".join(missing[:5]))
+
     print("\nJ. Placeholders")
     ph = re.findall(r"\[(?:repository URL|Zenodo DOI)[^\]]*\]", en)
     if ph:
