@@ -1,6 +1,7 @@
 {
-  "title": "Analysis code for \"A support-cell secretome program in human hippocampal aging is directionally reproducible but not gene-specific\"",
-  "upload_type": "software",
+  "title": "A support-cell secretome program in human hippocampal aging is directionally reproducible but not gene-specific",
+  "upload_type": "publication",
+  "publication_type": "preprint",
   "license": "MIT",
   "creators": [
     {
@@ -8,7 +9,7 @@
       "affiliation": "Brain Science Research Unit, Graduate School of Biomedical Sciences, Nagasaki University, Nagasaki, Japan"
     }
   ],
-  "description": "<p>Pre-specified reanalysis of public human hippocampal single-nucleus multiome data through a 2,224-gene secretome lens, with donors as the unit of replication. The design is calibrated by donor-label permutation, and every claim is paired with a control built to break it.</p><p>The deposit contains the analysis pipeline, the pre-specified analysis documents (<code>preregistration/</code>), pinned conda environments (<code>envs/</code>), and the committed result tables that underlie every number reported in the manuscript. Six targets run from a bare clone using the committed tables alone: <code>figures</code>, <code>validation</code>, <code>supplementary-tables</code>, <code>bh-scope</code>, <code>strict-secretome</code> and <code>verify-manuscript</code> — the last re-derives the manuscript's numbers from the source tables rather than taking the manuscript's word for them. Targets that recompute chromatin-accessibility concordance, differential-expression robustness, the regulatory layer and the primary differential-expression table additionally require the deposited matrices, which are not redistributed here. The limits of that reproducibility are stated in the manuscript Methods and in <code>results/audit_reruns/calibration/README.md</code>.</p><p>The typeset manuscript and its figures are on the preprint server; this deposit holds the text of record and the tables every number in it comes from.</p><p>Primary data are public: GSE268609, GSE278576, GSE299139, GSE186538, GSE199243, GSE264692, GSE325391.</p>",
+  "description": "<p>Pre-specified reanalysis of public human hippocampal single-nucleus multiome data through a 2,224-gene secretome lens, with donors as the unit of replication. The design is calibrated by donor-label permutation, and every claim is paired with a control built to break it.</p><p>The deposit contains the analysis pipeline, the pre-specified analysis documents (<code>preregistration/</code>), pinned conda environments (<code>envs/</code>), and the committed result tables that underlie every number reported in the manuscript. Six targets run from a bare clone using the committed tables alone: <code>figures</code>, <code>validation</code>, <code>supplementary-tables</code>, <code>bh-scope</code>, <code>strict-secretome</code> and <code>verify-manuscript</code> — the last re-derives the manuscript's numbers from the source tables rather than taking the manuscript's word for them. Targets that recompute chromatin-accessibility concordance, differential-expression robustness, the regulatory layer and the primary differential-expression table additionally require the deposited matrices, which are not redistributed here. The limits of that reproducibility are stated in the manuscript Methods and in <code>results/audit_reruns/calibration/README.md</code>.</p><p>This deposit is where the manuscript is published: <code>shimozaki-aging-secretome-v2.pdf</code> is the typeset text followed by all fifteen figures. In the repository and in the archive it sits at <code>manuscript/biorxiv_v2/</code>, beside the text of record in markdown, the Word file, and the figures one PDF each under <code>manuscript/biorxiv_v2/figures/</code>; the tables every number in it comes from are under <code>results/</code>. The work has not been peer reviewed.</p><p>The MIT Licence declared for this record covers the analysis code and the result tables. The manuscript text and its figures are &copy; the author, all rights reserved.</p><p>Primary data are public: GSE268609, GSE278576, GSE299139, GSE186538, GSE199243, GSE264692, GSE325391.</p>",
   "keywords": [
     "hippocampal aging",
     "single-nucleus multiome",
@@ -20,7 +21,7 @@
     "scanpy"
   ],
   "access_right": "open",
-  "version": "biorxiv-v2",
+  "version": "v2.1",
   "related_identifiers": [
     {
       "identifier": "https://github.com/kojishimozaki/human-hippocampal-aging-secretome",

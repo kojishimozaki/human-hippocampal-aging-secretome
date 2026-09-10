@@ -1,10 +1,12 @@
 cff-version: 1.2.0
 title: >-
-  Analysis code for "A support-cell secretome program in human hippocampal aging
-  is directionally reproducible but not gene-specific"
+  A support-cell secretome program in human hippocampal aging is
+  directionally reproducible but not gene-specific
 message: >-
-  If you use this code or the result tables, please cite both the software
-  (this record) and the manuscript it accompanies.
+  This repository is the home of the manuscript of that title and of the analysis
+  code and result tables behind it. Both are in one Zenodo record; cite the DOI
+  below. The CFF format has no publication type, so this file declares the
+  repository as software.
 type: software
 authors:
   - family-names: Shimozaki
@@ -14,6 +16,20 @@ authors:
       Nagasaki University, Nagasaki 852-8523, Japan
     email: shimozak@nagasaki-u.ac.jp
 license: MIT
+doi: 10.5281/zenodo.22640702
+repository-code: https://github.com/kojishimozaki/human-hippocampal-aging-secretome
+version: v2.1
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22640702
+    description: >-
+      Concept DOI. Always resolves to the newest version of the deposit, which is
+      what the manuscript cites.
+  - type: doi
+    value: 10.5281/zenodo.22640703
+    description: >-
+      First version. Code and result tables only; the manuscript PDF and its
+      figures were added in the version after it.
 keywords:
   - hippocampal aging
   - single-nucleus multiome

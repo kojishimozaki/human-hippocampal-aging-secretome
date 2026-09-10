@@ -7,8 +7,11 @@ Koji Shimozaki, Brain Science Research Unit, Graduate School of Biomedical Scien
 Nagasaki University.
 
 The manuscript of record is [`manuscript/biorxiv_v2/manuscript_biorxiv_v2.md`](manuscript/biorxiv_v2/manuscript_biorxiv_v2.md).
-The typeset manuscript and its figures are on the preprint server; this repository holds
-the text and the tables every number in it comes from.
+This repository is where it is published: the typeset manuscript with its figures is
+[`manuscript/biorxiv_v2/shimozaki-aging-secretome-v2.pdf`](manuscript/biorxiv_v2/shimozaki-aging-secretome-v2.pdf)
+(54 pages: 39 of text, then Figures 1–6 and S1–S9, which are also here one per file under
+[`manuscript/biorxiv_v2/figures/`](manuscript/biorxiv_v2/figures)). The tables every number
+in it comes from are under `results/`. It has not been through peer review.
 
 ## What this is
 
@@ -31,7 +34,7 @@ make figures              # figure panels and composites, from the committed res
 make validation           # senescence / proteome direction tests
 make supplementary-tables # Tables S1, S2, S3
 make bh-scope             # five per-cell-type BH families vs one genome-wide family
-make verify-manuscript    # 56 checks of the manuscript against its source tables
+make verify-manuscript    # 76 checks of the manuscript against its source tables
 ```
 
 These five targets run from a clone of this repository using only what is committed here.
@@ -41,8 +44,9 @@ Random seed is 42 throughout; environments are pinned in `envs/`.
 in the manuscript are the numbers in the tables. It re-derives each calibration value from
 `Table_S1`, recounts the 60-pair composition from the differential-expression table,
 checks that every supplementary figure's footer matches its legend, confirms the Word file
-and the markdown carry identical text, and compares the English and Japanese versions
-value by value. It does not take the manuscript's word for anything.
+and the markdown carry identical text, and confirms that the typeset PDF sends readers to
+the same three addresses the text of record does. It does not take the manuscript's word
+for anything.
 
 `make help` lists the remaining targets, which recompute the upstream tables and need the
 deposited matrices (see below).
@@ -58,7 +62,6 @@ deposited matrices (see below).
 | The audit narrative (`audit_log/`) | Records what each audit round found and changed. Read by no script and not needed to reproduce any result; the pre-specification documents it contained are in `preregistration/`. |
 | The Japanese mirror of the manuscript | Maintained alongside the English in the working repository; it is a translation, not a source of results. |
 | Generated figure panels under `figures/` | `make figures` produces them from the committed tables. |
-| The submitted Word file and its composed figures | The preprint server is their permanent home. Mirroring them here would only create a copy that goes stale whenever a figure is revised. |
 
 ## Limits of reproducibility, stated rather than implied
 
@@ -99,7 +102,8 @@ scripts/      numbered pipeline: 01_download -> 02_qc -> 03_de -> 04_atac -> 05_
               -> 06_validation -> 07_figures -> ... -> 17_biorxiv_v2 (manuscript build)
 results/      committed analysis outputs; the source of every number in the manuscript
 refs/         the secretome definition and the derived external reference tables
-manuscript/   biorxiv_v2/ (text of record, EN + JA) and supplementary_tables/
+manuscript/   biorxiv_v2/ (text of record in English, the typeset PDF, the Word file,
+              and figures/ one PDF per figure) and supplementary_tables/
 preregistration/   the pre-specified analysis documents, with a README mapping each one
               to the analysis it governs and to where the manuscript relies on it
 docs/*_PLAN.md     the arm-level analysis plans
@@ -114,8 +118,11 @@ needed to reproduce any result here.
 ## Licence and citation
 
 Code and result tables are released under the MIT Licence (`LICENSE`). The manuscript text
-and figures are covered by the terms of the preprint server or journal where they appear,
-not by that licence. Third-party reference data retain their own licences.
+and figures are © the author, all rights reserved, and are not covered by that licence; if
+they are later accepted by a journal, that journal's terms will apply to them instead.
+Third-party reference data retain their own licences.
 
 Citation metadata is in `CITATION.cff`; the Zenodo deposit is described by `.zenodo.json`.
-Please cite both the software record and the manuscript.
+The manuscript and the code behind it are one Zenodo record, registered as a preprint, so
+there is one thing to cite: concept DOI **10.5281/zenodo.22640702**, which always resolves
+to the newest version.

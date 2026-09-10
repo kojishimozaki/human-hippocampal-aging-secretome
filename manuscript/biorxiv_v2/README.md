@@ -1,44 +1,38 @@
-# bioRxiv v2 — the current manuscript
+# The manuscript
 
-Generated, not hand-edited. Everything here is built from one definition so that the
-English text, the Japanese mirror and the Word file cannot drift apart.
+Generated, not hand-edited. The English text and the Word file are built from one
+definition — `scripts/17_biorxiv_v2/revision_edits.py` — so they cannot drift apart.
 
 | File | What it is |
 |---|---|
-| `manuscript_biorxiv_v2.md` | **English text of record.** |
-| `manuscript_biorxiv_v2_ja.md` | Japanese mirror. Its header lists the paragraphs whose wording still tracks the pre-Word English (no number or claim differs). |
-| `abstract_250w.md` | 248-word abstract for journals that cap the abstract. Not the bioRxiv version. |
-| `biorxiv_resubmission_note.md` | Draft note to the bioRxiv screening team. Three bracketed items to fill. |
-| `../../submission/v2/shimozaki-aging-secretome-v2.docx` | Word file for submission. |
-| `../../submission/v2/figures/` | Figures with corrected supplementary numbering. |
+| `shimozaki-aging-secretome-v2.pdf` | **The manuscript as it is meant to be read**: 54 pages, 39 of text followed by Figures 1–6 and S1–S9. |
+| `manuscript_biorxiv_v2.md` | The same text as markdown. This is the text of record: every number in it is checked against `results/` by `make verify-manuscript`. |
+| `shimozaki-aging-secretome-v2.docx` | The same text as a Word file, byte-checked against the markdown by the same target. |
+| `figures/Figure_*.pdf` | The fifteen composed figures, one vector PDF each, in the order they appear in the merged PDF. |
+| `../supplementary_tables/` | Tables S1, S2 and SR1, and the workbook that holds all three. |
 
-## To change the manuscript
+The manuscript has not been through peer review. It reached this form through six
+adversarial audit rounds; the pre-specification each round was held to is in
+`../../preregistration/`.
 
-Edit `scripts/17_biorxiv_v2/revision_edits.py`, never these files, then:
+## To change the text
+
+Edit `scripts/17_biorxiv_v2/revision_edits.py`, never the files here, then:
 
 ```bash
 conda activate bio
 export PROJ=$(pwd)
 python scripts/17_biorxiv_v2/build_revision.py         # -> .docx + English markdown
-python scripts/17_biorxiv_v2/build_japanese_mirror.py  # -> Japanese mirror
-python scripts/17_biorxiv_v2/check_numbers.py          # EN/JA measured-value parity
+make verify-manuscript                                 # 76 checks against the tables
 ```
 
-Each builder anchors its edits on a prefix of the paragraph it targets and fails loudly if
-the base document has moved, so a silent mis-edit is not possible.
+Each builder anchors every edit on a prefix of the paragraph it targets and fails loudly
+if the base document has moved, so a silent mis-edit is not possible. `build_revision.py`
+starts from a superseded Word file that is deliberately not published, so it runs only in
+the author's working repository; the built text of record is committed here either way,
+and every data-driven target runs from a bare clone.
 
-`build_revision.py` edits the superseded submission DOCX, which is deliberately not
-published, so `make biorxiv-v2` runs only where that file is still on disk. It says so
-if it is missing. The text of record here is committed either way, and every
-data-driven target runs from a bare clone.
-
-## Before submitting
-
-1. Fill `PLACEHOLDERS` in `scripts/17_biorxiv_v2/revision_edits.py` with the repository
-   URL, the Zenodo DOI and the commit hash, then rebuild. The build prints a warning
-   while they are still placeholders.
-2. Export the DOCX to PDF and append the figures in the order
-   `Figure_1` … `Figure_6`, `Figure_S1` … `Figure_S9`.
-3. Confirm the licence in `LICENSE` (MIT was chosen as a default, not by the author).
-
-The revision itself is recorded in `audit_log/2026-09-04_biorxiv_v2_reframe/RESOLUTION.md`.
+The merged PDF is assembled by hand from the Word file and the fifteen figure PDFs, so it
+is the one artefact here that no script regenerates. `make verify-manuscript` therefore
+reads it back and confirms it has 54 pages and sends readers to the same three addresses
+the text of record does.

@@ -235,7 +235,8 @@ def build() -> None:
     set_text(p_concl_h, R.CONCLUSIONS_HEADING)
     set_text(p_concl_1, R.CONCLUSIONS_1)
     set_text(p_concl_2, R.CONCLUSIONS_2)
-    set_text(p_data_body, para_text(p_data_body) + R.DATA_AVAIL_ADDENDUM)
+    set_text(p_data_body,
+             para_text(p_data_body) + R.DATA_AVAIL_ADDENDUM.format(**R.PLACEHOLDERS))
     set_text(p_tables1, para_text(p_tables1) + R.TABLE_S1_ADDENDUM)
 
     code_body = R.CODE_AVAIL_BODY.format(**R.PLACEHOLDERS)

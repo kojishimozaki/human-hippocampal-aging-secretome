@@ -34,8 +34,9 @@ ABSTRACT = (
     "age was associated with a directionally stable secretome-related program across "
     "astrocytes, microglia, a mixed vascular compartment, oligodendrocyte precursor cells, "
     "and oligodendrocytes: all 60 gene–cell-type pairs kept their sign in every "
-    "leave-one-donor-out refit, all 57 testable directions were preserved after "
-    "ambient-RNA correction, and the direction reproduced in an independent hippocampal "
+    "leave-one-donor-out refit, all 57 pairs that remained testable preserved their "
+    "direction after ambient-RNA correction, and the direction reproduced in an "
+    "independent hippocampal "
     "cohort (Spearman ρ = 0.24; 81% sign concordance versus a 58% background, "
     "P = 5×10−4). The same program was not reproduced above background in mature "
     "dentate granule, CA excitatory, or inhibitory neurons from the same donors, "
@@ -113,9 +114,9 @@ RESULTS_CALIB_1 = (
     "Deposited single-nucleus data now supply much of what is claimed about human brain "
     "aging, yet the inferential capacity of the resulting designs is rarely measured. We "
     "calibrated the primary contrast — 8 young adults versus 9 older, clinically "
-    "defined control donors — by donor-label permutation, and report that calibration here, "
-    "after the results it governs, because it sets the terms on which every count above "
-    "should be read."
+    "defined control donors — by donor-label permutation, and report it here, once the "
+    "principal comparisons are in view, because it sets the terms on which every count "
+    "in this paper should be read."
 )
 
 RESULTS_CALIB_2 = (
@@ -154,7 +155,8 @@ RESULTS_CALIB_3 = (
 RESULTS_CALIB_4 = (
     "Multiple-testing scope was fixed in advance and is reported in both forms. "
     "Benjamini–Hochberg correction was applied within each cell type, so the 99,544 tests "
-    "across the five niche classes form five families rather than one. Treating all five as "
+    "across the five niche classes form five families rather than one (the regenerated "
+    "table returns 99,543; see Methods, Reproducibility). Treating all five as "
     "a single genome-wide family retains 49 of the 60 reported pairs and admits 4 new ones, "
     "all in oligodendrocytes (AZGP1, LTBP3, NRG1, and NXPE3). Because the predefined "
     "60-pair set seeded every downstream accessibility, methylation, reproduction, receptor, "
@@ -272,7 +274,8 @@ DATA_AVAIL_ADDENDUM = (
     "ingestion limit stated in Methods. The code archive contains the pre-specified analysis "
     "documents and the result tables underlying the reported numbers, including the "
     "donor-label permutation calibration, the effect-size-matched reproduction background, "
-    "and the external donor-label permutation null, each with a provenance record."
+    "and the external donor-label permutation null, each with a provenance record. It is "
+    "deposited at {ZENODO_DOI} and developed at {REPO_URL}."
 )
 
 CODE_AVAIL_HEADING = "Code availability"
@@ -283,7 +286,8 @@ CODE_AVAIL_BODY = (
     "the version used for this manuscript is the release tagged {RELEASE_TAG}. Software "
     "environments are "
     "pinned in envs/ (pyDESeq2 0.5.4, scanpy 1.11.5, Python 3.11.15; R with DESeq2, Signac, "
-    "chromVAR, and ashr), and analyses use random seed 42 unless stated otherwise. The "
+    "chromVAR, and ashr), analyses use random seed 42 unless stated otherwise, and the code "
+    "is released under the MIT Licence. The "
     "figure, validation, supplementary-table, and multiple-testing-scope targets run from a "
     "clone of the repository using only the committed result tables; the targets that "
     "recompute chromatin-accessibility concordance, differential-expression robustness, the "
@@ -299,7 +303,10 @@ CODE_AVAIL_BODY = (
 # to exactly one revision with no circularity. Only the two bracketed values need filling.
 PLACEHOLDERS = {
     "REPO_URL": "https://github.com/kojishimozaki/human-hippocampal-aging-secretome",
-    "ZENODO_DOI": "https://doi.org/10.5281/zenodo.22640703",
+    "ZENODO_DOI": "https://doi.org/10.5281/zenodo.22640702",  # concept DOI: always
+    # resolves to the newest version. The first version, 10.5281/zenodo.22640703,
+    # holds code and tables only; the manuscript PDF and its figures were added in
+    # the version after it.
     "RELEASE_TAG": "biorxiv-v2",
 }
 
@@ -384,6 +391,30 @@ REVIEW_FIXES = [
      "pairs. COL21A1 is the only gene to reach ATAC FDR significance, and it does so within "
      "the RNA-significant family alone: none of the 369,393 genome-wide peak tests survives "
      "correction. B, Age-associated chromVAR motif activity."),
+
+    # The abstract announces that the design was calibrated and every claim controlled;
+    # the Introduction listed four biological questions and never said so.
+    ("Donors, rather than nuclei, were the units of replication, and the aging signature "
+     "was defined without using the Alzheimer\u2019s-disease contrast.",
+     "Donors, rather than nuclei, were the units of replication, and the aging signature "
+     "was defined without using the Alzheimer\u2019s-disease contrast. We also treated the "
+     "design itself as something to be measured: the primary contrast was calibrated by "
+     "donor-label permutation, and each claim was paired with a control constructed to "
+     "break it, so that what these data can and cannot support is separated rather than "
+     "inferred from counts of significant genes."),
+
+    # Four of five holds at the secretome scope; three of five at the genome-wide scope.
+    # Quoting only the wider figure in the Discussion reads as choosing the kinder scope.
+    ("four of the five support-cell compartments contained more secretome-related "
+     "associations than expected after donor labels were permuted.",
+     "four of the five support-cell compartments contained more secretome-related "
+     "associations than expected after donor labels were permuted \u2014 three of them also "
+     "on the genome-wide count."),
+
+    # NicheNet's prior is cited by bare Zenodo record number while every other deposit
+    # in the paper is given as a resolvable DOI.
+    ("NicheNet v2 priors (Zenodo 7074291)",
+     "NicheNet v2 priors (https://doi.org/10.5281/zenodo.7074291)"),
 
     # "independent" invited the reading that a separate investigator had audited the work.
     ("MAD is included only in C to show age matching and is not part of the resilience "
